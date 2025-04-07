@@ -24,8 +24,7 @@
 - **Comedy Lost** – Difficulty image fix
 
 ### ✅ Recommended Mods:
-- *Plenty O' Stickers*  
-- *ModBootstrap (V-SLICE MOD MANAGER)* – *Currently outdated*
+- [VS Annie OC Week V-Slice Port](https://gamebanana.com/mods/581764)
 
 ### 📦 Installation:
 1. Drop `garcello v-slice.zip` into your base game's `mods` folder (create one if it doesn't exist).
