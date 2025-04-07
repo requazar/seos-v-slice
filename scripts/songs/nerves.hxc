@@ -1,0 +1,118 @@
+import funkin.play.song.Song;
+import funkin.play.PlayState;
+import funkin.Preferences;
+import flixel.FlxSprite;
+import funkin.graphics.FunkinSprite;
+import funkin.Paths;
+import funkin.util.Constants;
+import flixel.FlxG;
+import funkin.play.PlayStatePlaylist;
+import funkin.audio.FunkinSound;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import funkin.ui.options.PreferencesMenu;
+import funkin.save.Save;
+
+class NervesSong extends Song {
+  var hasPlayedCutscene:Bool;
+
+  public var COLOR_HEALTH_BAR_PURPLE:FlxColor = 0xFF8E40A5;
+
+	public function new() {
+		super('nerves');
+	}
+
+  public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+    trace('Start countdown for nerves');
+
+    if (PlayState.instance.currentVariation == 'default' && !PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true; // Match code to match the dialogue code from 0.6.2
+
+    if (!hasPlayedCutscene) {
+      trace('Pausing countdown to play cutscene.');
+
+      hasPlayedCutscene = true;
+
+      event.cancel(); // CANCEL THE COUNTDOWN!
+
+      // Play a SFX
+      FunkinSound.playOnce(Paths.sound('garWeak'), 1.0);
+
+      PlayState.instance.isInCutscene = true;
+
+      startDialogue();
+    }
+	}
+
+	public override function isSongNew(currentDifficulty:String):Bool{
+		if(currentDifficulty == 'easy-pico' || currentDifficulty == 'normal-pico' || currentDifficulty == 'hard-pico'){
+		  if (Save.instance.hasBeatenSong(this.id, ['easy-pico', 'normal-pico', 'hard-pico']) == false) return true;
+		}
+    return false;
+	}
+
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
+
+      var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, ['easy-pico', 'normal-pico', 'hard-pico']);
+
+      switch (variationId) {
+        case 'pico':
+          // return hasBeatenPicoMix ? [''] : [];
+          // No Pico mix on BF instrumental, sorry!
+          return [];
+        default:
+          return hasBeatenPicoMix ? ['pico'] : [];
+      }
+    }
+
+    return [];
+  }
+
+  function startDialogue() {
+    var targetDialogue = PlayState.instance.currentVariation == 'pico' ? 'nerves-pico' : 'nerves';
+    PlayState.instance.startConversation(targetDialogue);
+  }
+
+
+  /**
+   * Don't replay the cutscene between restarts.
+   */
+  function onSongRetry(event:ScriptEvent)
+  {
+    super.onSongRetry(event);
+
+    hasPlayedCutscene = true;
+  }
+
+  /**
+   * Replay the cutscene after leaving the song.
+   */
+  function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
+
+    hasPlayedCutscene = false;
+  }
+
+	function onBeatHit(event:SongTimeScriptEvent)
+  {
+    // When overriding onBeatHit, make sure to call super.onBeatHit,
+    // otherwise boppers will not work.
+    super.onBeatHit(event);
+
+    if (event.beat == 180 && PlayStatePlaylist.isStoryMode) {
+      trace('Hit end of song! Starting outro.');
+
+    }
+  }
+
+  public override function onDialogueEnd() {
+    // We may need to wait for the outro to play.
+    Countdown.performCountdown();
+    PlayState.instance.currentStage.resume();
+  }
+  
+}

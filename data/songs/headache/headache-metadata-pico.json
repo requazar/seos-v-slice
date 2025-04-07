@@ -1,0 +1,28 @@
+{
+	"timeFormat": "ms",
+	"artist": "Pink Lemonade",
+	"charter": "Greeny3483",
+	"playData": {
+		"stage": "garcelloStagePicoDay",
+		"noteStyle": "funkin",
+		"album": "seosVSliceOriginalOST",
+		"ratings": {
+			"easy": 1,
+			"normal": 2,
+			"hard": 3
+		},
+		"difficulties": [
+			"easy",
+			"normal",
+			"hard"
+		],
+		"characters": {"girlfriend": "nene", "opponent": "garcello", "player": "pico-playable", "instrumental": "pico", "altInstrumentals": []}
+		
+	},
+	"songName": "Headache (Pico Mix)",
+	"timeChanges": [
+		{"t": 0, "bpm": 120}
+	],
+	"generatedBy": "Psych Engine v1.0.3 - Chart Editor V-Slice Exporter",
+	"version": "2.2.3"
+}

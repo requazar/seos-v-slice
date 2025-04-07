@@ -1,0 +1,120 @@
+import flixel.tweens.FlxEase;
+import funkin.graphics.FunkinSprite;
+import flixel.tweens.FlxTween;
+import funkin.Paths;
+import funkin.play.cutscene.dialogue.DialogueBox;
+import funkin.modding.module.Module;
+import funkin.util.tools.StringTools;
+import funkin.util.Constants;
+import funkin.play.PlayState;
+import funkin.play.PlayStatePlaylist;
+import funkin.play.song.Song;
+import flixel.ui.FlxBar;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+import funkin.save.Save;
+
+class HeadacheSong extends Song {
+  var hasPlayedCutscene:Bool;
+  public var COLOR_HEALTH_BAR_PURPLE:FlxColor = 0xFF8E40A5;
+
+	public function new() {
+		super('headache');
+	}
+
+  public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+    if (PlayState.instance.currentVariation == 'default' && !PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true; // Match code to match the dialogue code from 0.6.2
+
+    if (!hasPlayedCutscene) {
+      trace('Pausing countdown to play cutscene.');
+
+      hasPlayedCutscene = true;
+
+      event.cancel(); // CANCEL THE COUNTDOWN!
+
+      PlayState.instance.isInCutscene = true;
+
+      transitionToDialogue();
+    }
+	}
+
+  function transitionToDialogue() {
+    trace('Transitioning to dialogue.');
+
+    PlayState.instance.camCutscene.visible = true;
+
+    var black:FlxSprite = new FunkinSprite(-20, -20).makeSolidColor(FlxG.width * 1.5, FlxG.height * 1.5, 0xFF000000);
+    black.cameras = [PlayState.instance.camCutscene];
+    black.zIndex = 1000000;
+    PlayState.instance.add(black);
+
+    var introImg:FlxSprite = new FunkinSprite(0,0).loadTexture("garIntroPico");
+    introImg.cameras = [PlayState.instance.camCutscene];
+    introImg.zIndex = 1000001;
+    introImg.alpha = 0.001;
+    PlayState.instance.add(introImg);
+
+    var tweenFunction = function(x) {
+      var xSnapped = Math.floor(x * 8) / 8;
+      black.alpha = 1.0 - xSnapped;
+    };
+    black.alpha = 1.0;
+
+    var bgMusic:FunkinSound = new FunkinSound().loadEmbedded(Paths.music('garbgnoise'));
+    bgMusic.volume = 0;
+    bgMusic.play();
+    bgMusic.fadeIn(1,0,0.6);
+    FlxTween.tween(introImg, {alpha: 1}, 1.0);
+    new FlxTimer().start(8.0, ()->{
+      introImg.kill();
+      black.kill();
+      bgMusic.fadeIn(1,0.6,0);
+      FlxTween.num(0.0, 1.0, 2.0, {
+        ease: FlxEase.linear,
+        startDelay: 0.25,
+        onComplete: function (input) {
+          
+          // black.visible = false;
+          startDialogue();
+        }
+      }, tweenFunction); 
+    });
+  }
+
+  function startDialogue() {
+    var targetDialogue = PlayState.instance.currentVariation == 'pico' ? 'headache-pico' : 'headache';
+    PlayState.instance.startConversation(targetDialogue);
+  }
+
+  /**
+   * Don't replay the cutscene between restarts.
+   */
+  function onSongRetry(event:ScriptEvent)
+  {
+    super.onSongRetry(event);
+
+    hasPlayedCutscene = true;
+  }
+
+  /**
+   * Replay the cutscene after leaving the song.
+   */
+  override function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN); // Purple color in hexadecimal
+
+    hasPlayedCutscene = false;
+  }
+
+  public override function onDialogueEnd() {
+    // We may need to wait for the outro to play.
+    Countdown.performCountdown();
+  }
+
+}

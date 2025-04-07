@@ -1,0 +1,103 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "Lunchbox",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "bf",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["beep bop!"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Hhh...", "Hey."]
+    },
+    {
+      "speaker": "bf",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["ski boop?"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["That was fun, but... my chest is starting to feel funny."]
+    },
+    {
+      "speaker": "bf",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["beep...?"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I-I'm not giving up just yet though. You've got some tight bars, little man."]
+    },
+    {
+      "speaker": "bf",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["bee bo ski bop!"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Oh? You want me to keep going?"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["F-fine by me. I'm enjoying this actually."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["One more couldn't hurt...", "...Right?"]
+    }
+  ]
+}

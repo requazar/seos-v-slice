@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "name": "BF",
+  "assetPath": "dialogue/bf_norm",
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1,
+  "offsets": [800, 170],
+  "animations": [
+    {
+      "name": "talk",
+      "prefix": "BF Portrait Enter instance 10000",
+      "offsets": [0, 0],
+      "frameRate": 12,
+      "looped": false
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+	"version": "1.0.0",
+	"danceEvery": 1,
+	"scale": 0.9,
+	"offsets": [0, 0],
+	"name": "Garcello (Minus)",
+	"flipX": false,
+	"singTime": 6.1,
+	"startingAnimation": "idle",
+	"isPixel": false,
+	"assetPath": "characters/MinusGar",
+	"healthIcon": {
+		"offsets": [
+			0,
+			0
+		],
+		"id": "gar",
+		"flipX": false,
+		"isPixel": false,
+		"scale": 1
+	},
+	"animations": [
+		{
+			"flipY": false,
+			"frameRate": 24,
+			"offsets": [-64, 42],
+			"prefix": "MinusGar Idle",
+			"flipX": false,
+			"looped": false,
+			"name": "idle"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				231,
+				20
+			],
+			"frameRate": 24,
+			"prefix": "MinusGar Left",
+			"flipX": false,
+			"looped": false,
+			"name": "singLEFT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				40,
+				-28
+			],
+			"frameRate": 24,
+			"prefix": "MinusGar Down",
+			"flipX": false,
+			"looped": false,
+			"name": "singDOWN"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-34,
+				58
+			],
+			"frameRate": 24,
+			"prefix": "MinusGar Up",
+			"flipX": false,
+			"looped": false,
+			"name": "singUP"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-195,
+				57
+			],
+			"frameRate": 24,
+			"prefix": "MinusGar Right",
+			"flipX": false,
+			"looped": false,
+			"name": "singRIGHT"
+		}
+	]
+}

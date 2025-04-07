@@ -1,0 +1,25 @@
+import funkin.play.character.SparrowCharacter;
+import funkin.play.character.CharacterType;
+import funkin.play.PlayState;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.ui.FlxBar;
+//import flixel.util.FlxColor;
+import flixel.addons.transition.FlxTransitionableState;
+import flixel.addons.transition.Transition;
+
+class TiredGarcelloCharacter extends SparrowCharacter {
+	function new() {
+		super('garcellotired');
+	}
+
+	override function onCreate():Void {
+		super.onCreate(); // Ensure the parent class's onCreate is called
+		if (PlayState.instance != null && PlayState.instance.iconP2 != null) {
+			if (PlayState.instance.iconP2.characterId == 'garcellotired') {
+				// Use a hardcoded hexadecimal value for purple
+				PlayState.instance.healthBarBG.color = 0xFF800080; // ARGB format for purple
+			}
+		}
+	}
+}

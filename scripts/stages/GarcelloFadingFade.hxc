@@ -1,0 +1,31 @@
+import funkin.play.PlayState;
+import funkin.play.stage.Stage;
+import flixel.tweens.FlxTween;
+
+
+class GarAlleyDeadStage extends Stage
+{
+	function new()
+	{
+		super('garcelloStageFading');
+	}
+
+	function buildStage()
+	{
+		super.buildStage();
+	}
+
+	function onBeatHit(event:SongTimeScriptEvent):Void
+	{
+		super.onBeatHit(event);
+		if (PlayState.instance.currentSong.id.toLowerCase() == "fading")
+		{
+			if (event.beat == 60)
+			{
+				this.getOpponent(false).playAnimation("goodbye",false,true);
+				FlxTween.tween(this.getOpponent(false), {alpha: 0}, 1);
+				FlxTween.tween(PlayState.instance.iconP2, {alpha: 0}, 1);
+			}
+		}
+	}
+}

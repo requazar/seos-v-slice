@@ -1,0 +1,48 @@
+{
+  "version": "2.2.3",
+  "songName": "Nerves (OG)",
+  "artist": "Atsuover + Rageminer",
+  "charter": "Atsuover + Rageminer",
+  "looped": false,
+  "offsets": {
+    "instrumental": 0,
+    "altInstrumentals": {    },
+    "vocals": {    }
+  },
+  "playData": {
+    "album": "seosOST",
+    "songVariations": [    ],
+    "difficulties": ["og"],
+    "characters": {
+      "player": "bf",
+      "girlfriend": "gf",
+      "opponent": "garcellotired",
+      "instrumental": "og",
+      "altInstrumentals": [      ]
+    },
+    "stage": "garcelloStage",
+    "noteStyle": "funkin",
+    "ratings": {
+      "og": 2
+    },
+    "previewStart": 0,
+    "previewEnd": 0
+  },
+  "generatedBy": "Friday Night Funkin' - v0.4.1",
+  "timeFormat": "ms",
+  "timeChanges": [
+    {
+      "t": 0,
+      "b": 0,
+      "bpm": 100,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

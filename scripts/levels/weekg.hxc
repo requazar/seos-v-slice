@@ -1,0 +1,39 @@
+import funkin.play.PlayState;
+import funkin.play.song.Song;
+import funkin.ui.story.Level;
+import funkin.save.Save;
+
+class SmokeEmOutStruggleLevel extends Level
+{
+  // little bit of code taken from weekend 1
+	function new()
+	{
+		super('weekg');
+	}
+
+  override function isUnlocked():Bool {
+    return true;
+  }
+
+  function hasBeatenLevel():Bool {
+    return Save.instance.hasBeatenLevel('weekg');
+  }
+
+  override function getSongDisplayNames(difficultyId:String):Array<String> {
+    if (hasBeatenLevel()) {
+      // Fading is a secret song ;)
+      return ["Headache", "Nerves", "Release", "Fading"];
+    } else {
+      return ["Headache", "Nerves", "Release"];
+    }
+  }
+	public function listDifficulties(variationId:String, variationIds:Array<String>, showLocked:Bool):Array<String> {
+		if (showLocked || Save.instance.hasBeatenLevel('weekg')) {
+			return super.listDifficulties(variationId, variationIds);
+		}
+
+		// Hide all difficulties if the player has not beaten the week.
+		return [];
+	}
+  
+}

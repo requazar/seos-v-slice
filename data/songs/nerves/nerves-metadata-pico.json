@@ -1,0 +1,34 @@
+{
+	"timeFormat": "ms",
+	"artist": "PlantGamer09",
+	"charter": "Greeny3483",
+	"playData": {
+		"stage": "garcelloStagePico",
+		"noteStyle": "funkin",
+		"album": "seosVSliceOriginalOST",
+		"ratings": {
+			"easy": 1,
+			"normal": 3,
+			"hard": 3
+		},
+        "difficulties": [
+         "easy",
+         "normal",
+         "hard"
+        ],
+		"characters": {
+			"player": "pico-playable",
+			"girlfriend": "nene",
+			"opponent": "garcellotired",
+			"instrumental": "pico",
+			"altInstrumentals": []
+		}
+		
+	},
+	"songName": "Nerves (Pico Mix)",
+	"timeChanges": [
+		{"t": 8000, "bpm": 150}
+	],
+	"generatedBy": "Psych Engine v1.0-prerelease - Chart Editor V-Slice Exporter",
+	"version": "2.2.3"
+}

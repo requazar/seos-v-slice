@@ -1,0 +1,81 @@
+{
+	"version": "1.0.0",
+	"danceEvery": 1,
+	"scale": 1,
+	"offsets": [0, 2.902],
+	"name": "Garcello",
+	"flipX": false,
+	"singTime": 4,
+	"startingAnimation": "idle",
+	"isPixel": false,
+	"assetPath": "characters/garcello",
+	"healthIcon": {
+		"offsets": [
+			0,
+			0
+		],
+		"id": "gar",
+		"flipX": false,
+		"isPixel": false,
+		"scale": 1
+	},
+	"animations": [
+		{
+			"flipY": false,
+			"frameRate": 24,
+			"offsets": [0, -1],
+			"prefix": "garcello idle",
+			"flipX": false,
+			"looped": false,
+			"name": "idle"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				10,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello left",
+			"flipX": false,
+			"looped": false,
+			"name": "singLEFT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-4,
+				-6
+			],
+			"frameRate": 24,
+			"prefix": "garcello down",
+			"flipX": false,
+			"looped": false,
+			"name": "singDOWN"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-3,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello up",
+			"flipX": false,
+			"looped": false,
+			"name": "singUP"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				3,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello right",
+			"flipX": false,
+			"looped": false,
+			"name": "singRIGHT"
+		}
+	]
+}

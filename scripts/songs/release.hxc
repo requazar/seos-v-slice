@@ -1,0 +1,113 @@
+import funkin.play.song.Song;
+import funkin.play.PlayState;
+import funkin.Preferences;
+import flixel.FlxSprite;
+import funkin.graphics.FunkinSprite;
+import funkin.play.cutscene.dialogue.DialogueBox;
+import funkin.Paths;
+import flixel.FlxG;
+import funkin.util.Constants;
+import funkin.play.PlayStatePlaylist;
+import funkin.audio.FunkinSound;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import funkin.ui.options.PreferencesMenu;
+import funkin.play.cutscene.VideoCutscene;
+
+class ReleaseSong extends Song {
+
+  var hasPlayedCutscene:Bool;
+  var playedVideo:Bool;
+  var hasPlayedDialogue:Bool;
+  var white:FlxSprite;
+
+  public var COLOR_HEALTH_BAR_PURPLE:FlxColor = 0xFF8E40A5;
+
+	public function new() {
+		super('release');
+	}
+
+  public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+    if (!PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true;
+
+    if (!hasPlayedCutscene) {
+      trace('Pausing countdown to play cutscene.');
+
+      hasPlayedCutscene = true;
+      PlayState.instance.isInCutscene = true;
+      
+
+      event.cancel(); // CANCEL THE COUNTDOWN!
+
+      FunkinSound.load(Paths.sound('Garcello_Dies'),0);
+      releasecut = new FunkinSprite().loadSparrow('garcelloreleasecutscene');
+      releasecut.antialiasing = true;
+      releasecut.animation.addByPrefix('video', 'garcutscene', 15, false);
+      releasecut.setGraphicSize(Std.int(releasecut.width * 2));
+      releasecut.scrollFactor.set();
+      releasecut.updateHitbox();
+      releasecut.cameras = [PlayState.instance.camCutscene];
+      releasecut.screenCenter();
+      releasecut.zIndex = 1000000;
+      PlayState.instance.add(releasecut);
+      releasecut.animation.play('video');
+      FunkinSound.playOnce(Paths.sound('Garcello_Dies'), 1, function()
+      {
+        PlayState.instance.remove(releasecut);
+        FunkinSound.playOnce(Paths.sound('Wind_Fadeout'), 1.0);
+        FlxG.camera.flash(0xFFFFFFFF, 5, function()
+        {
+          startDialogue();
+        }, true);
+      });
+    }
+	}
+
+  function startDialogue() {
+    PlayState.instance.startConversation('release');
+  }
+  /**
+   * Don't replay the cutscene between restarts.
+   */
+  function onSongRetry(event:ScriptEvent)
+  {
+    super.onSongRetry(event);
+
+    hasPlayedCutscene = true;
+    hasPlayedDialogue = true;
+    playedVideo = true;
+  }
+
+  /**
+   * Replay the cutscene after leaving the song.
+   */
+  function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
+
+    hasPlayedCutscene = false;
+    hasPlayedDialogue = false;
+    playedVideo = false;
+
+    
+  }
+
+	function onBeatHit(event:SongTimeScriptEvent)
+  {
+    // When overriding onBeatHit, make sure to call super.onBeatHit,
+    // otherwise boppers will not work.
+    super.onBeatHit(event);
+  }
+
+  public override function onDialogueEnd() {
+    // We may need to wait for the outro to play.
+    Countdown.performCountdown();
+  }
+  
+}
+
+

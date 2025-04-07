@@ -1,0 +1,40 @@
+{
+  "version": "2.2.2",
+  "songName": "Fading (OG)",
+  "artist": "Atsuover + Rageminer",
+  "charter": "Atsuover + Rageminer",
+  "playData": {
+    "album": "seosOST",
+    "songVariations": ["og"],
+    "difficulties": [
+      "og"
+    ],
+    "characters": {
+      "player": "bf",
+      "girlfriend": "gf",
+      "opponent": "garcelloghosty",
+      "instrumental": "og",
+      "altInstrumentals": []
+    },
+    "stage": "garcelloStageFading",
+    "noteStyle": "funkin",
+    "ratings": {"og": 1}
+  },
+  "generatedBy": "Greeny3483's Own Two Hands",
+  "timeFormat": "ms",
+  "timeChanges": [
+    {
+      "t": 0,
+      "b": 0,
+      "bpm": 100,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

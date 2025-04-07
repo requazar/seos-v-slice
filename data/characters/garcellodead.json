@@ -1,0 +1,93 @@
+{
+	"version": "1.0.0",
+	"danceEvery": 1,
+	"scale": 1,
+	"offsets": [-2.245, 2.245],
+	"name": "Garcello (Dead)",
+	"flipX": false,
+	"singTime": 4,
+	"startingAnimation": "idle",
+	"isPixel": false,
+	"assetPath": "characters/garcellodead_assets",
+	"healthIcon": {
+		"offsets": [
+			0,
+			0
+		],
+		"id": "gardead",
+		"flipX": false,
+		"isPixel": false,
+		"scale": 1
+	},
+	"animations": [
+		{
+			"flipY": false,
+			"frameRate": 24,
+			"offsets": [0, -1],
+			"prefix": "garcello idle dance",
+			"flipX": false,
+			"looped": false,
+			"name": "idle"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello Sing Note LEFT",
+			"flipX": false,
+			"looped": false,
+			"name": "singLEFT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello Sing Note DOWN",
+			"flipX": false,
+			"looped": false,
+			"name": "singDOWN"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello Sing Note UP",
+			"flipX": false,
+			"looped": false,
+			"name": "singUP"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				-1
+			],
+			"frameRate": 24,
+			"prefix": "garcello Sing Note RIGHT",
+			"flipX": false,
+			"looped": false,
+			"name": "singRIGHT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				-1
+			],
+			"frameRate": 15,
+			"prefix": "garcello coolguy",
+			"flipX": false,
+			"looped": false,
+			"name": "tightbars"
+		}
+	]
+}

@@ -1,0 +1,135 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "Lunchbox",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["What's up, little man?"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Did the smoke catch your attention?"]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Yeah."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I smoke too."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Not whatever that is, though."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["C'mon, try it out. Pretty good stuff."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["No, really. I'm good."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Hm..."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Tell you what."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["If you beat me in a friendly little rap battle, I'll get off your case."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Sound cool, little dude?"]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Sure, whatever."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Alright then, it's settled."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "normalTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Just don't mind my smoke, cool?"]
+    }
+  ]
+}

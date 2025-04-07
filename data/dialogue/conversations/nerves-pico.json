@@ -1,0 +1,103 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "Lunchbox",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Gh.. Damn."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["You alright?"]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I should be fine, but... my chest is starting to feel funny."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Heh.", " I'll take a hit for you now."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["You sure? You see what it's doing to me.. Right?"]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I'll be fine. I've been through... Worse."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Hmm."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["That's the spirit, little dude."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "nervousTalk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I'm not done singin' though. Let's keep this up."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["*Cough*, Let's do it."]
+    }
+  ]
+}
