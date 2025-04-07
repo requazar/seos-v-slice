@@ -1,7 +1,7 @@
 ![Failed to load image. Womp.](./dump/logoforuhh.png)
 ## Smoke 'Em Out Struggle V-Slice Port
 
-**Smoke 'Em Out Struggle V-Slice Port** is a high-effort Friday Night Funkin' mod that brings back Garcello with added polish, custom events, and new musical twists. BF, GF, and Pico investigate a strange glow in an alleyway—leading to a familiar yet revamped showdown.
+**Smoke 'Em Out Struggle V-Slice Port** is a mod for the Friday Night Funkin' base game (Version 0.6.0+), that adds the original songs, and more.
 
 ### 🔥 Features:
 - 🎬 Cutscenes & Dialogue
