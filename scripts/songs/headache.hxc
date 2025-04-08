@@ -52,11 +52,17 @@ class HeadacheSong extends Song {
     black.zIndex = 1000000;
     PlayState.instance.add(black);
 
-    var introImg:FlxSprite = new FunkinSprite(0,0).loadTexture("garIntroPico");
+    var introImg:FlxSprite = new FunkinSprite(0,0).loadTexture("garIntroText");
     introImg.cameras = [PlayState.instance.camCutscene];
     introImg.zIndex = 1000001;
     introImg.alpha = 0.001;
     PlayState.instance.add(introImg);
+
+    var introImgPico:FlxSprite = new FunkinSprite(0,0).loadTexture("garIntroPico");
+    introImgPico.cameras = [PlayState.instance.camCutscene];
+    introImgPico.zIndex = 1000001;
+    introImgPico.alpha = 0.001;
+    PlayState.instance.add(introImgPico);
 
     var tweenFunction = function(x) {
       var xSnapped = Math.floor(x * 8) / 8;
@@ -68,9 +74,16 @@ class HeadacheSong extends Song {
     bgMusic.volume = 0;
     bgMusic.play();
     bgMusic.fadeIn(1,0,0.6);
-    FlxTween.tween(introImg, {alpha: 1}, 1.0);
+
+    if (PlayState.instance.currentVariation == 'pico') {
+      FlxTween.tween(introImgPico, {alpha: 1}, 1.0);
+    } else {
+      FlxTween.tween(introImg, {alpha: 1}, 1.0);
+    }
+
     new FlxTimer().start(8.0, ()->{
       introImg.kill();
+      introImgPico.kill();
       black.kill();
       bgMusic.fadeIn(1,0.6,0);
       FlxTween.num(0.0, 1.0, 2.0, {

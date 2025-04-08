@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="seosOG-text.png">
-<SubTexture name="idle0000" x="0" y="0" width="271" height="145" frameX="0" frameY="0" frameWidth="271" frameHeight="145" />
-<SubTexture name="switch0000" x="271" y="0" width="271" height="145" frameX="0" frameY="0" frameWidth="271" frameHeight="145" />
-<SubTexture name="switch0001" x="271" y="0" width="271" height="145" frameX="0" frameY="0" frameWidth="271" frameHeight="145" />
-<SubTexture name="switch0002" x="271" y="0" width="271" height="145" frameX="0" frameY="0" frameWidth="271" frameHeight="145" />
-<SubTexture name="switch0003" x="271" y="0" width="271" height="145" frameX="0" frameY="0" frameWidth="271" frameHeight="145" />
-</TextureAtlas>
