@@ -15,7 +15,7 @@ import funkin.modding.module.ModuleHandler;
 
 class BaseMenuState extends Module
 {
-  public var garVNUM:String = '2.41'; // Add "Modified Build" if it is a GitHub commit.
+  public var garVNUM:String = '2.4H'; // Add "Modified Build" if it is a GitHub commit.
 
   public function new()
   {
