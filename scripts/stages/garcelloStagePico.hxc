@@ -76,7 +76,7 @@ class GarcelloStagePicoStage extends Stage
 		// Make it so the rain shader doesn't show over the game over screen
 		// FlxG.camera.setFilters([rainShaderFilter]);
 
-		resetStageValues();
+		//resetStageValues();
 		FlxG.camera.filters = [rainShaderFilter];
 	}
 }
