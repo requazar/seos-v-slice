@@ -6,7 +6,7 @@
 ### 🔥 Features:
 - 🎬 Cutscenes & Dialogue
 - 🕹️ Easy, Normal, and Hard difficulties
-- 🧍 Custom Animations:
+- 🧍 Scripted events for all songs!:
   - Nerves: Cough
   - Release: “Tight Bars”
   - Fading: Fade with smirk
@@ -14,6 +14,7 @@
 - 🎶 Extra songs (best experienced on **Hard** mode)
 - 💬 Parity elements with FNF-v0.3.0+
 - 🌟 NEW Pico mixes of your favorite tracks!
+- 🚬 "OG" tracks from the original Smoke 'Em Out Struggle!
 
 ### 🎨 Credits:
 - **kirbiro** / **Applehair** – Freeplay Icons  
