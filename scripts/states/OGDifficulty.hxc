@@ -1,27 +1,23 @@
 import flixel.FlxG;
-
 import funkin.util.Constants;
 import funkin.util.ReflectUtil;
-//import funkin.util.FlxColor;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.ui.freeplay.FreeplayState;
 import funkin.modding.module.Module;
 import funkin.modding.module.ModuleHandler;
 
-class BaseConstants extends Module
+class OGDifficulty extends Module
 {
 
   //var game = PlayState.instance;
 
   public function new()
   {
-    super('BaseConstants');
+    super('OGDifficulty');
   }
   override function create():Void {
     super.create();
-    // This didn't work but I'm forgetting the mod is an expansion and it isn't supposed to take over your game.
-    //Constants.TITLE = "Smoke 'Em Out Struggle";
   }
   override function onSubStateOpenBegin(event:SubStateScriptEvent)
   {

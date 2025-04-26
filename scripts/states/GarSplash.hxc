@@ -13,13 +13,13 @@ import funkin.util.Constants;
 import funkin.modding.module.Module;
 import funkin.modding.module.ModuleHandler;
 
-class BaseMenuState extends Module
+class GarSplash extends Module
 {
-  public var garVNUM:String = '2.4H3 Modified Build'; // Add "Modified Build" if it is a GitHub commit that isn't being marked as a main release.
+  public var garVNUM:String = '2.4H4'; // Add "Modified Build" if it is a GitHub commit that isn't being marked as a main release.
 
   public function new()
   {
-    super('BaseMenuState');
+    super('GarSplash');
   }
   
   override function onUpdate(event:UpdateScriptEvent)
