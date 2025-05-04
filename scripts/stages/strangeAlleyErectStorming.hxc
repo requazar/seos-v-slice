@@ -215,7 +215,7 @@ class StrangeAlleywayErectStormingStage extends Stage
 
 		FunkinSound.playOnce(Paths.sound("thunder_1")); // The loudest one
 	
-		FlxG.camera.flash(0xFFFFFFFF, 0.7);
+		game.camCutscene.flash(0xFFFFFFFF, 0.7); // Flash camCutscene instead
 	
 		if (getBoyfriend() != null && getBoyfriend().hasAnimation('scared')) {
 			getBoyfriend().playAnimation('scared', true, true);
@@ -245,6 +245,17 @@ class StrangeAlleywayErectStormingStage extends Stage
     function onStepHit(event:SongTimeScriptEvent)
 	{
 		super.onStepHit(event);
+
+		if (event.step == 1 && PlayState.instance.currentSong.id == "release") {
+	        forceLightningStrike();
+			doCinematics();
+
+			topBorder.visible = true;
+			bottomBorder.visible = true;
+
+			FlxTween.tween(topBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
+			FlxTween.tween(bottomBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
+		}
 
 		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
 	        forceLightningStrike();

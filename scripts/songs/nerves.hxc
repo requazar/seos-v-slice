@@ -40,7 +40,7 @@ class NervesSong extends Song {
 
       PlayState.instance.isInCutscene = true;
 
-      transitionToDialogue();
+      startDialogue();
     }
 	}
 

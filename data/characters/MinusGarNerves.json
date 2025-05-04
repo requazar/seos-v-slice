@@ -6,7 +6,7 @@
     "isPixel": false,
     "scale": 0.9,
     "healthIcon": {
-        "id": "Gartired",
+        "id": "gartired",
         "isPixel": false,
         "flipX": false,
         "scale": 1
@@ -45,7 +45,7 @@
             ]
         },
         {
-            "name": "singDOWN-alt",
+            "name": "cough",
             "prefix": "MinusGarNerves Cough",
             "offsets": [
                 0,

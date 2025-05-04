@@ -103,6 +103,10 @@ class ReleaseSong extends Song {
     hasPlayedDialogue = false;
     playedVideo = false;
 
+    if (PlayState.instance.currentVariation == 'minus') {
+      PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
+    }
+
     
   }
 
