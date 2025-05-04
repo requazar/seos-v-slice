@@ -39,9 +39,11 @@ class HeadacheSong extends Song {
   public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
-    if (PlayState.instance.currentVariation != 'pico' || PlayState.instance.currentVariation != 'minus' && !PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true; // Match code to match the dialogue code from 0.6.2
-
-    if (!hasPlayedCutscene) {
+    if (PlayState.instance.currentVariation == 'minus') {
+      hasPlayedCutscene = true;
+    } else if ((PlayState.instance.currentVariation == 'default' || PlayState.instance.currentVariation == 'og') && !PlayStatePlaylist.isStoryMode) {
+      hasPlayedCutscene = true;
+    } else if (!hasPlayedCutscene) {
       trace('Pausing countdown to play cutscene.');
 
       hasPlayedCutscene = true;

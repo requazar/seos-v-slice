@@ -19,8 +19,8 @@ class MinusGarcelloDragonCharacter extends SparrowCharacter {
 		super('MinusGarDragon');
 	}
 
-	override function onUpdate(event:ScriptEvent) {
-		super.onUpdate(event);
+	function onCreate(event:ScriptEvent) {
+		super.onCreate(event);
 		if (PlayState.instance != null) {
 			PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
 		}

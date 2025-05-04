@@ -24,9 +24,5 @@ class GarcelloCharacter extends SparrowCharacter {
 		if (PlayState.instance != null) {
 			PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
 		}
-		if (ReflectUtil.getClassNameOf(FlxG.state) == "funkin.play.PlayState")
-		{
-			PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
-		}
 	}
 }
