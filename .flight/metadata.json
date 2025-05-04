@@ -1,0 +1,12 @@
+{
+  "name": "Smoke 'Em Out Struggle",
+  "version": "4.1.0",
+  "description": "A Friday Night Funkin' total conversion mod featuring 62 brand new songs spread out across 12 weeks..",
+  "engine": {
+    "engine_type": "vanilla",
+    "engine_name": "Modified Psych Engine",
+    "engine_icon": "path/to/icon",
+    "mods_folder": true,
+    "mods_folder_path": ""
+  }
+}

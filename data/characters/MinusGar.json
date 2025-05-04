@@ -1,81 +1,79 @@
 {
-	"version": "1.0.0",
-	"danceEvery": 1,
-	"scale": 0.9,
-	"offsets": [0, 0],
-	"name": "Garcello (Minus)",
-	"flipX": false,
-	"singTime": 6.1,
-	"startingAnimation": "idle",
-	"isPixel": false,
-	"assetPath": "characters/MinusGar",
-	"healthIcon": {
-		"offsets": [
-			0,
-			0
-		],
-		"id": "gar",
-		"flipX": false,
-		"isPixel": false,
-		"scale": 1
-	},
-	"animations": [
-		{
-			"flipY": false,
-			"frameRate": 24,
-			"offsets": [-64, 42],
-			"prefix": "MinusGar Idle",
-			"flipX": false,
-			"looped": false,
-			"name": "idle"
-		},
-		{
-			"flipY": false,
-			"offsets": [
-				231,
-				20
-			],
-			"frameRate": 24,
-			"prefix": "MinusGar Left",
-			"flipX": false,
-			"looped": false,
-			"name": "singLEFT"
-		},
-		{
-			"flipY": false,
-			"offsets": [
-				40,
-				-28
-			],
-			"frameRate": 24,
-			"prefix": "MinusGar Down",
-			"flipX": false,
-			"looped": false,
-			"name": "singDOWN"
-		},
-		{
-			"flipY": false,
-			"offsets": [
-				-34,
-				58
-			],
-			"frameRate": 24,
-			"prefix": "MinusGar Up",
-			"flipX": false,
-			"looped": false,
-			"name": "singUP"
-		},
-		{
-			"flipY": false,
-			"offsets": [
-				-195,
-				57
-			],
-			"frameRate": 24,
-			"prefix": "MinusGar Right",
-			"flipX": false,
-			"looped": false,
-			"name": "singRIGHT"
-		}
-	]
+    "assetPath": "characters/MinusGar",
+    "name": "Garcello (Minus)",
+    "singTime": 6.1,
+    "version": "1.0.0",
+    "scale": 0.9,
+    "flipX": false,
+    "isPixel": false,
+    "offsets": [
+        0,
+        0
+    ],
+    "cameraOffsets": [
+        0,
+        0
+    ],
+    "healthIcon": {
+        "id": "Gar",
+        "offsets": [
+            0,
+            0
+        ],
+        "flipX": false,
+        "isPixel": false,
+        "scale": 1
+    },
+    "animations": [
+        {
+            "name": "singLEFT",
+            "prefix": "MinusGar Left",
+            "looped": false,
+            "offsets": [
+                231,
+                20
+            ],
+            "frameRate": 24
+        },
+        {
+            "name": "singRIGHT",
+            "prefix": "MinusGar Right",
+            "looped": false,
+            "offsets": [
+                -195,
+                57
+            ],
+            "frameRate": 24
+        },
+        {
+            "name": "singDOWN",
+            "prefix": "MinusGar Down",
+            "looped": false,
+            "offsets": [
+                40,
+                -28
+            ],
+            "frameRate": 24
+        },
+        {
+            "name": "singUP",
+            "prefix": "MinusGar Up",
+            "looped": false,
+            "offsets": [
+                -34,
+                58
+            ],
+            "frameRate": 24
+        },
+        {
+            "name": "idle",
+            "prefix": "MinusGar Idle",
+            "looped": false,
+            "offsets": [
+                -64,
+                42
+            ],
+            "frameRate": 24
+        }
+    ]
 }

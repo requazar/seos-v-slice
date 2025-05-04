@@ -1,0 +1,169 @@
+{
+    "version": "1.0.0",
+    "name": "Boyfriend (Minus - Cold)",
+    "assetPath": "characters/bfminusCold",
+    "singTime": 4,
+    "isPixel": false,
+    "scale": 1,
+    "healthIcon": {
+        "id": "bf",
+        "isPixel": false,
+        "flipX": false,
+        "scale": 1
+    },
+    "animations": [
+        {
+            "name": "hey",
+            "prefix": "BF HEY",
+            "offsets": [
+                12,
+                54
+            ]
+        },
+        {
+            "name": "hurt",
+            "prefix": "BF hit",
+            "offsets": [
+                15,
+                33
+            ]
+        },
+        {
+            "name": "scared",
+            "prefix": "BF idle shaking",
+            "offsets": [
+                -4,
+                -1
+            ]
+        },
+        {
+            "name": "firstDeath",
+            "prefix": "BF dies",
+            "offsets": [
+                37,
+                11
+            ]
+        },
+        {
+            "name": "deathLoop",
+            "prefix": "BF Dead Loop",
+            "offsets": [
+                37,
+                5
+            ]
+        },
+        {
+            "name": "deathConfirm",
+            "prefix": "BF Dead confirm",
+            "offsets": [
+                37,
+                69
+            ]
+        },
+        {
+            "name": "dodge",
+            "prefix": "boyfriend dodge",
+            "offsets": [
+                -10,
+                -16
+            ]
+        },
+        {
+            "name": "attack",
+            "prefix": "boyfriend attack",
+            "offsets": [
+                294,
+                267
+            ]
+        },
+        {
+            "name": "pre-attack",
+            "prefix": "bf pre attack",
+            "offsets": [
+                -40,
+                -36
+            ]
+        },
+        {
+            "name": "idle",
+            "prefix": "bfMinusCold Idle",
+            "offsets": [
+                -2,
+                -3
+            ]
+        },
+        {
+            "name": "singLEFTmiss",
+            "prefix": "bfMinusCold LEFT",
+            "offsets": [
+                19,
+                9
+            ]
+        },
+        {
+            "name": "singDOWNmiss",
+            "prefix": "bfMinusCold DOWN",
+            "offsets": [
+                -19,
+                -12
+            ]
+        },
+        {
+            "name": "singUPmiss",
+            "prefix": "bfMinusCold UP",
+            "offsets": [
+                15,
+                90
+            ]
+        },
+        {
+            "name": "singRIGHTmiss",
+            "prefix": "bfMinusCold RIGHT",
+            "offsets": [
+                -48,
+                33
+            ]
+        },
+        {
+            "name": "singDOWN",
+            "prefix": "bfMinusCold singDOWN",
+            "offsets": [
+                -17,
+                -13
+            ]
+        },
+        {
+            "name": "singUP",
+            "prefix": "bfMinusCold singUP",
+            "offsets": [
+                -5,
+                64
+            ]
+        },
+        {
+            "name": "singLEFT",
+            "prefix": "bfMinusCold singLEFT",
+            "offsets": [
+                15,
+                -4
+            ]
+        },
+        {
+            "name": "singRIGHT",
+            "prefix": "bfMinusCold singRIGHT",
+            "offsets": [
+                -51,
+                21
+            ]
+        },
+        {
+            "name": "React",
+            "prefix": "bfMinusCold React",
+            "offsets": [
+                -21,
+                -3
+            ]
+        }
+    ],
+    "flipX": true
+}

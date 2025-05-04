@@ -1,0 +1,186 @@
+{
+    "props": [
+        {
+            "danceEvery": 0,
+            "zIndex": -7,
+            "position": [
+                -1900.0,
+                -1520.0
+            ],
+            "scale": [
+                0.9,
+                0.9
+            ],
+            "name": "garMinusMistStageBG",
+            "isPixel": false,
+            "assetPath": "stages/garMinusMistStageBG",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": -5,
+            "position": [
+                -1900.0,
+                -1580.0
+            ],
+            "scale": [
+                0.9,
+                0.9
+            ],
+            "name": "garMinusMistyStage",
+            "isPixel": false,
+            "assetPath": "stages/garMinusMistyStage",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": 296,
+            "position": [
+                -1.0,
+                -320.0
+            ],
+            "scale": [
+                1,
+                1
+            ],
+            "name": "MinusCar",
+            "isPixel": false,
+            "assetPath": "stages/MinusCar",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": 297,
+            "position": [
+                -1999.0,
+                -20.0
+            ],
+            "scale": [
+                1,
+                1
+            ],
+            "name": "MinusCarTwo",
+            "isPixel": false,
+            "assetPath": "stages/MinusCarTwo",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "zIndex": 500,
+            "position": [
+                -3000.0,
+                -1820.0
+            ],
+            "scale": [
+                3.1,
+                3.1
+            ],
+            "animType": "sparrow",
+            "name": "smokeyFront",
+            "isPixel": false,
+            "startingAnimation": "Idle",
+            "assetPath": "stages/garSmoke",
+            "scroll": [
+                1,
+                1
+            ],
+            "animations": [
+                {
+                    "offsets": [
+                        0,
+                        0
+                    ],
+                    "flipY": false,
+                    "frameRate": 24,
+                    "prefix": "smokey instance",
+                    "looped": true,
+                    "flipX": false,
+                    "name": "Idle"
+                }
+            ]
+        },
+        {
+            "zIndex": -6,
+            "position": [
+                -3000.0,
+                -2520.0
+            ],
+            "scale": [
+                3.1,
+                3.1
+            ],
+            "animType": "sparrow",
+            "name": "smokeyBack",
+            "isPixel": false,
+            "startingAnimation": "Idle",
+            "assetPath": "stages/garSmoke",
+            "scroll": [
+                1,
+                1
+            ],
+            "animations": [
+                {
+                    "offsets": [
+                        0,
+                        0
+                    ],
+                    "flipY": false,
+                    "frameRate": 24,
+                    "prefix": "smokey instance",
+                    "looped": true,
+                    "flipX": false,
+                    "name": "Idle"
+                }
+            ]
+        }
+    ],
+    "cameraZoom": 0.6,
+    "version": "1.0.0",
+    "characters": {
+        "bf": {
+            "zIndex": 295,
+            "position": [
+                -140,
+                210
+            ],
+            "cameraOffsets": [
+                -100,
+                -100
+            ]
+        },
+        "dad": {
+            "zIndex": 200,
+            "position": [
+                -650,
+                430
+            ],
+            "cameraOffsets": [
+                -100,
+                -100
+            ]
+        },
+        "gf": {
+            "zIndex": 100,
+            "cameraOffsets": [
+                0,
+                50
+            ],
+            "position": [
+                -270,
+                150
+            ]
+        }
+    },
+    "name": "Parking Lot (Smokey)"
+}

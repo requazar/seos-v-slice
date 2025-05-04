@@ -1,0 +1,28 @@
+import funkin.play.character.SparrowCharacter;
+import funkin.play.character.CharacterType;
+import funkin.play.character.BaseCharacter;
+import funkin.play.PlayState;
+import funkin.util.Constants;
+
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.ui.FlxBar;
+//import flixel.util.FlxColor;
+import flixel.addons.transition.FlxTransitionableState;
+import flixel.addons.transition.Transition;
+
+class MinusGarcelloCharacter extends SparrowCharacter {
+
+	var COLOR_HEALTH_BAR_PURPLE:FlxColor = 0xFF8E40A5;
+
+	function new() {
+		super('MinusGar');
+	}
+
+	function onCreate(event:ScriptEvent) {
+		super.onCreate(event);
+		if (PlayState.instance != null) {
+			PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
+		}
+	}
+}

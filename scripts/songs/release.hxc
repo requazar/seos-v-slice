@@ -12,7 +12,7 @@ import funkin.audio.FunkinSound;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import funkin.ui.options.PreferencesMenu;
-import funkin.play.cutscene.VideoCutscene;
+import funkin.play.cutscene.VideoCutscene; // 1133
 
 class ReleaseSong extends Song {
 
@@ -24,15 +24,15 @@ class ReleaseSong extends Song {
   public var COLOR_HEALTH_BAR_PURPLE:FlxColor = 0xFF8E40A5;
 
 	public function new() {
-		super('release');
+		 super('release');
 	}
 
   public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
-    if (!PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true;
+    if (!PlayStatePlaylist.isStoryMode && PlayState.instance.currentVariation != "pico") hasPlayedCutscene = true;
 
-    if (!hasPlayedCutscene) {
+    if (!hasPlayedCutscene && PlayState.instance.currentVariation != 'pico') {
       trace('Pausing countdown to play cutscene.');
 
       hasPlayedCutscene = true;
@@ -63,10 +63,22 @@ class ReleaseSong extends Song {
         }, true);
       });
     }
+    if (!hasPlayedCutscene && PlayState.instance.currentVariation == 'pico') {
+      hasPlayedCutscene = true;
+      PlayState.instance.isInCutscene = true;
+
+      event.cancel();
+      startDialogue();
+    }
 	}
 
   function startDialogue() {
-    PlayState.instance.startConversation('release');
+    if (PlayState.instance.currentVariation == 'pico') {
+      PlayState.instance.startConversation('release-pico');
+    } else {
+      PlayState.instance.startConversation('release');
+    }
+
   }
   /**
    * Don't replay the cutscene between restarts.
@@ -87,8 +99,6 @@ class ReleaseSong extends Song {
   {
     super.onCreate(event);
 
-    PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
-
     hasPlayedCutscene = false;
     hasPlayedDialogue = false;
     playedVideo = false;
@@ -96,11 +106,9 @@ class ReleaseSong extends Song {
     
   }
 
-	function onBeatHit(event:SongTimeScriptEvent)
+	function onStepHit(event:SongTimeScriptEvent)
   {
-    // When overriding onBeatHit, make sure to call super.onBeatHit,
-    // otherwise boppers will not work.
-    super.onBeatHit(event);
+    super.onStepHit(event);
   }
 
   public override function onDialogueEnd() {

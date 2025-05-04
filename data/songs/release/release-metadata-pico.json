@@ -1,0 +1,62 @@
+{
+  "version": "2.2.4",
+  "songName": "Release (Pico Mix)",
+  "artist": "Requazar",
+  "charter": "Greeny3483",
+  "divisions": 96,
+  "looped": false,
+  "offsets": {
+    "instrumental": 0,
+    "altInstrumentals": {    },
+    "vocals": {    },
+    "altVocals": {    }
+  },
+  "playData": {
+    "songVariations": [    ],
+    "difficulties": [
+      "easy",
+      "normal",
+      "hard"
+    ],
+    "characters": {
+      "player": "pico-playable",
+      "girlfriend": "nene",
+      "opponent": "garcellodead",
+      "instrumental": "pico",
+      "altInstrumentals": [      ],
+      "opponentVocals": [
+        "garcellodead"
+      ],
+      "playerVocals": [
+        "pico"
+      ]
+    },
+    "stage": "strangeAlleyErectStorming",
+    "noteStyle": "funkin",
+    "ratings": {
+      "easy": 2,
+      "normal": 4,
+      "hard": 5
+    },
+    "album": "seosErectOST",
+    "previewStart": 0,
+    "previewEnd": 15000
+  },
+  "generatedBy": "Friday Night Funkin' - v0.6.2",
+  "timeFormat": "ms",
+  "timeChanges": [
+    {
+      "t": 8000,
+      "b": 0,
+      "bpm": 120,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "version": "2.0.0",
   "scrollSpeed": {
-    "og": 1.5,
-    "default": 1.5
+    "default": 1.5,
+    "og": 1.5
   },
   "events": [
     {
@@ -55,12 +55,12 @@
 }
     },
     {
-      "t": 37125,
+      "t": 37080,
       "e": "PlayAnimation",
       "v": {
-	"anim": "goodbye",
+	"target": "dad",
 	"force": true,
-	"target": "dad"
+	"anim": "goodbye"
 }
     }
   ],
@@ -740,15 +740,15 @@
       },
       {
         "t": 33600,
-        "d": 2,
+        "d": 5,
         "l": 2250,
         "k": "og",
         "p": [        ]
       },
       {
         "t": 33600,
-        "d": 5,
-        "l": 3225,
+        "d": 2,
+        "l": 2250,
         "k": "og",
         "p": [        ]
       },
@@ -758,9 +758,15 @@
         "l": 2250,
         "k": "og",
         "p": [        ]
+      },
+      {
+        "t": 36000,
+        "d": 5,
+        "l": 900,
+        "k": "og",
+        "p": [        ]
       }
-    ],
-    "hard": [    ]
+    ]
   },
-  "generatedBy": "Friday Night Funkin' - v0.6.2"
+  "generatedBy": "Friday Night Funkin' - v0.5.1"
 }

@@ -1,0 +1,275 @@
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.math.FlxMath;
+import flixel.math.FlxPoint;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+import funkin.audio.FunkinSound;
+import funkin.Conductor;
+import funkin.util.Constants;
+import funkin.graphics.framebuffer.BitmapDataUtil;
+import funkin.graphics.framebuffer.FixedBitmapData;
+import funkin.graphics.shaders.OverlayBlend;
+import funkin.graphics.shaders.RuntimeRainShader;
+import funkin.modding.base.ScriptedFlxRuntimeShader;
+import funkin.graphics.shaders.AdjustColorShader;
+import funkin.Paths;
+import funkin.play.PlayState;
+import funkin.play.stage.Stage;
+import openfl.filters.BlurFilter;
+import openfl.filters.ShaderFilter;
+import funkin.util.FlxTweenUtil;
+import openfl.utils.Assets;
+import funkin.Preferences;
+import flixel.addons.display.FlxTiledSprite;
+import StringTools;
+
+class StrangeAlleywayErectStormingStage extends Stage
+{
+	var rainShader:RuntimeRainShader = new RuntimeRainShader();
+	var rainShaderFilter:ShaderFilter;
+    var rainDropTimer:Float = 0;
+	var rainDropWait:Float = 6;
+	var blurFilter:BlurFilter = new BlurFilter(6, 6);
+
+	var rainShaderStartIntensity:Float;
+	var rainShaderEndIntensity:Float;
+
+	var lightningStrikeBeat:Int = 0;
+	var lightningStrikeOffset:Int = 8;
+
+	var colorShaderBf:AdjustColorShader;
+	var colorShaderDad:AdjustColorShader;
+	var colorShaderGf:AdjustColorShader;
+
+	public var playerStrumlineDefaultYPos:Float = Preferences.downscroll ? FlxG.height - playerStrumline.height - Constants.STRUMLINE_Y_OFFSET : Constants.STRUMLINE_Y_OFFSET;
+	public var opponentStrumlineDefaultYPos:Float = Preferences.downscroll ? FlxG.height - opponentStrumline.height - Constants.STRUMLINE_Y_OFFSET : Constants.STRUMLINE_Y_OFFSET;
+
+   	function new()
+	{
+		super('strangeAlleyErectStorming');
+	}
+    override function onCreate(event:ScriptEvent):Void
+	{
+		super.onCreate(event);
+		rainShader.scale = FlxG.height / 200;
+
+		game = PlayState.instance;
+
+        FlxG.console.registerObject("rainShader", rainShader);
+		switch (PlayState.instance.currentSong.id)
+        {
+			case "release":
+				rainShaderStartIntensity = 0.3;
+				rainShaderEndIntensity = 0.5;
+		}
+        rainShader.intensity = rainShaderStartIntensity;
+        rainShaderFilter = new ShaderFilter(rainShader);
+		FlxG.camera.filters = [rainShaderFilter];
+
+		topBorder = new FlxSprite(0, 0).makeGraphic(FlxG.width, 50, 0xFF000000);
+		topBorder.scale.set(5, 5);
+		topBorder.cameras = [game.camCutscene];
+		topBorder.zIndex = 50000;
+		bottomBorder = new FlxSprite(0, FlxG.height - 50).makeGraphic(FlxG.width, 50, 0xFF000000);
+		bottomBorder.scale.set(5, 5);
+		bottomBorder.zIndex = 50000;
+		bottomBorder.cameras = [game.camCutscene];
+
+		game.add(topBorder);
+		game.add(bottomBorder);
+		topBorder.visible = false;
+		bottomBorder.visible = false;
+
+    }
+    override function onUpdate(event:UpdateScriptEvent)
+	{
+		super.onUpdate(event);
+
+		var remappedIntensityValue:Float = FlxMath.remapToRange(Conductor.instance.songPosition, 0, FlxG.sound.music != null ? FlxG.sound.music.length : 0.0, rainShaderStartIntensity, rainShaderEndIntensity);
+		rainShader.intensity = remappedIntensityValue;
+		rainShader.updateViewInfo(FlxG.width, FlxG.height, FlxG.camera);
+		rainShader.update(event.elapsed);
+
+		if(PlayState.instance.currentStage.getBoyfriend() != null && PlayState.instance.currentStage.getBoyfriend().shader == null) 
+		{
+			PlayState.instance.currentStage.getBoyfriend().shader = colorShaderBf;
+			PlayState.instance.currentStage.getGirlfriend().shader = colorShaderGf;
+			PlayState.instance.currentStage.getDad().shader = colorShaderDad;
+		}
+	}
+    override function onGameOver(event:ScriptEvent):Void 
+	{
+		super.onGameOver(event);
+		FlxG.camera.filters = [];
+	}
+
+	function buildStage()
+	{
+		super.buildStage();
+	
+		colorShaderBf = new AdjustColorShader();
+		colorShaderDad = new AdjustColorShader();
+		colorShaderGf = new AdjustColorShader();
+	
+		colorShaderBf.brightness = -23;
+		colorShaderBf.hue = 12;
+		colorShaderBf.contrast = 7;
+		colorShaderBf.saturation = 0;
+	
+		colorShaderGf.brightness = -30;
+		colorShaderGf.hue = -9;
+		colorShaderGf.contrast = -4;
+		colorShaderGf.saturation = 0;
+	
+		//colorShaderDad.brightness = -10;
+		colorShaderDad.hue = -20;
+		colorShaderDad.contrast = -23;
+		colorShaderDad.saturation = 5;
+	
+		getNamedProp('smokey').blend = 0;
+	
+	}
+
+	override function onSongRetry(event:ScriptEvent):Void {
+		super.onSongRetry(event);
+		lightningStrikeBeat = 0;
+		lightningStrikeOffset = 8;
+
+		FlxG.camera.filters = [rainShaderFilter];
+	}
+
+	function fetchAssetPaths():Array<String>
+	{
+		var results:Array<String> = super.fetchAssetPaths();
+		results.push(Paths.sound('thunder_1'));
+		results.push(Paths.sound('thunder_2'));
+		return results;
+	}
+
+	function doCinematics():Void {
+		topBorder.visible = true;
+		bottomBorder.visible = true;
+
+		FlxTween.tween(topBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
+		FlxTween.tween(bottomBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
+		
+		if (Preferences.downscroll) {
+			game.opponentStrumline.y = opponentStrumlineDefaultYPos + 400;
+			game.playerStrumline.y = playerStrumlineDefaultYPos + 400;
+		} else {
+			game.opponentStrumline.y = opponentStrumlineDefaultYPos + 100;
+			game.playerStrumline.y = playerStrumlineDefaultYPos + 100;
+		}
+
+		/*game.opponentStrumline.y = opponentStrumlineDefaultYPos + 100;
+		game.playerStrumline.y = playerStrumlineDefaultYPos + 100;*/
+		game.scoreText.visible = false;
+		game.healthBar.visible = false;
+		game.healthBarBG.visible = false;
+	    game.iconP1.visible = false;
+		game.iconP2.visible = false;
+	}
+	function destroyCinematics():Void { // Only place after doCinematics() has already been called
+		topBorder.visible = false;
+		bottomBorder.visible = false;
+		
+		if (Preferences.downscroll) {
+			game.opponentStrumline.y = game.opponentStrumline.y + 100;
+			game.playerStrumline.y = game.playerStrumline.y + 100;
+		} else {
+			game.opponentStrumline.y = game.opponentStrumline.y - 100;
+			game.playerStrumline.y = game.playerStrumline.y - 100;
+		}
+		game.scoreText.visible = true;
+		game.healthBar.visible = true;
+		game.healthBarBG.visible = true;
+		game.iconP1.visible = true;
+		game.iconP2.visible = true;
+	}
+
+	function doLightningStrike(playSound:Bool, beat:Int):Void
+	{
+		if (playSound)
+		{
+			FunkinSound.playOnce(Paths.soundRandom('thunder_', 1, 2), 1.0);
+		}
+	
+		FlxG.camera.flash(0xFFFFFFFF, 0.5);
+	
+		lightningStrikeBeat = beat;
+		lightningStrikeOffset = FlxG.random.int(8, 24);
+	
+		if (getBoyfriend() != null && getBoyfriend().hasAnimation('scared')) {
+			getBoyfriend().playAnimation('scared', true, true);
+		}
+	
+		if (getGirlfriend() != null && getGirlfriend().hasAnimation('scared')) {
+			getGirlfriend().playAnimation('scared', true, true);
+		}
+	}
+	function forceLightningStrike():Void
+	{
+
+		FunkinSound.playOnce(Paths.sound("thunder_1")); // The loudest one
+	
+		FlxG.camera.flash(0xFFFFFFFF, 0.7);
+	
+		if (getBoyfriend() != null && getBoyfriend().hasAnimation('scared')) {
+			getBoyfriend().playAnimation('scared', true, true);
+		}
+	
+		if (getGirlfriend() != null && getGirlfriend().hasAnimation('scared')) {
+			getGirlfriend().playAnimation('scared', true, true);
+		}
+	}
+
+	function onBeatHit(event:SongTimeScriptEvent)
+	{
+		super.onBeatHit(event);
+
+		if (PlayState.instance.currentSong != null) {
+			if (event.beat == 4 && PlayState.instance.currentSong.id == "release")
+			{
+				doLightningStrike(false, event.beat);
+			}
+		}
+
+		if (FlxG.random.bool(10) && event.beat > (lightningStrikeBeat + lightningStrikeOffset))
+		{
+			doLightningStrike(true, event.beat);
+		}
+	}
+    function onStepHit(event:SongTimeScriptEvent)
+	{
+		super.onStepHit(event);
+
+		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
+	        forceLightningStrike();
+			doCinematics();
+
+			topBorder.visible = true;
+			bottomBorder.visible = true;
+
+			FlxTween.tween(topBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
+			FlxTween.tween(bottomBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
+		}
+
+		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
+	        forceLightningStrike();
+			doCinematics();
+
+			topBorder.visible = true;
+			bottomBorder.visible = true;
+		}
+		if (event.step == 910 && PlayState.instance.currentSong.id == "release") {
+	        forceLightningStrike();
+			destroyCinematics();
+
+			topBorder.visible = false;
+			bottomBorder.visible = false;
+		}
+	}
+}

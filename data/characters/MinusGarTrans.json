@@ -1,0 +1,34 @@
+{
+    "version": "1.0.0",
+    "name": "Garcello (Minus - Transformation)",
+    "assetPath": "characters/MinusGarTrans",
+    "singTime": 6.1,
+    "offsets": [-50, 200],
+    "isPixel": false,
+    "scale": 0.9,
+    "healthIcon": {
+        "id": "gartired",
+        "isPixel": false,
+        "flipX": false,
+        "scale": 1
+    },
+    "animations": [
+        {
+            "name": "Transform",
+            "prefix": "MinusGarTrans Transform",
+            "offsets": [
+                260,
+                650
+            ]
+        },
+        {
+            "name": "idle",
+            "prefix": "MinusGarTrans Idle",
+            "offsets": [
+                261,
+                655
+            ]
+        }
+    ],
+    "flipX": false
+}

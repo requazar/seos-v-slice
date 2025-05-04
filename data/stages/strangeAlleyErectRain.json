@@ -1,0 +1,48 @@
+{
+  "props": [
+    {
+      "danceEvery": 0,
+      "zIndex": 1,
+      "position": [-400, -50],
+      "scale": [0.9, 0.9],
+      "animType": "sparrow",
+      "name": "garStagebg",
+      "isPixel": false,
+      "assetPath": "stages/garStagebgPicoCloudy",
+      "scroll": [0.9, 0.9],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 3,
+      "position": [-400, -99],
+      "scale": [0.9, 0.9],
+      "animType": "sparrow",
+      "name": "garStage",
+      "isPixel": false,
+      "assetPath": "stages/garStagealt",
+      "scroll": [1.0, 1.0],
+      "animations": []
+    }
+  ],
+  "cameraZoom": 0.91,
+  "version": "1.0.0",
+  "characters": {
+    "bf": {
+      "zIndex": 300,
+      "position": [1030, 920],
+      "cameraOffsets": [-100, -80]
+    },
+    "dad": {
+      "zIndex": 200,
+      "position": [405, 975],
+      "cameraOffsets": [-20, -80]
+    },
+    "gf": {
+      "zIndex": 100,
+      "cameraOffsets": [0, 0],
+      "position": [650, 830]
+    }
+  },
+  "name": "Strange Alleyway (Raining) [Erect]"
+}

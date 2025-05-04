@@ -64,8 +64,6 @@ class FadingSong extends Song {
   {
     super.onCreate(event);
 
-    PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
-
     hasPlayedCutscene = false;
   }
 

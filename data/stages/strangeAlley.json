@@ -1,0 +1,48 @@
+{
+  "props": [
+    {
+      "danceEvery": 0,
+      "zIndex": 10,
+      "position": [-400, -50],
+      "scale": [0.9, 0.9],
+      "animType": "sparrow",
+      "name": "garStagebg",
+      "isPixel": false,
+      "assetPath": "stages/garStagebg",
+      "scroll": [0.9, 0.9],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 10,
+      "position": [-400, -99],
+      "scale": [1.0, 1.0],
+      "animType": "sparrow",
+      "name": "garStage",
+      "isPixel": false,
+      "assetPath": "stages/garStage",
+      "scroll": [1.0, 1.0],
+      "animations": []
+    }
+  ],
+  "cameraZoom": 0.9,
+  "version": "1.0.0",
+  "characters": {
+    "bf": {
+      "zIndex": 300,
+      "position": [1030, 920],
+      "cameraOffsets": [-100, -80]
+    },
+    "dad": {
+      "zIndex": 200,
+      "position": [405, 960],
+      "cameraOffsets": [-75, -110]
+    },
+    "gf": {
+      "zIndex": 100,
+      "cameraOffsets": [0, 0],
+      "position": [650, 830]
+    }
+  },
+  "name": "Strange Alleyway (Night)"
+}

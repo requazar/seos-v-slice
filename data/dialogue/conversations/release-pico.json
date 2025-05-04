@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "Lunchbox",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Hmm..."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Seems like I overdid it a bit."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Can't take anymore hits like that."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Damn.."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["..."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["It's alright, really.."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I'd rather it be me than you."]
+    },
+    {
+      "speaker": "garcello",
+      "speakerAnimation": "ghostTalk",
+      "box": "garDeadDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["I say..", "Even if our time was short..", "Lets go off with a bang."]
+    },
+    {
+      "speaker": "pico",
+      "speakerAnimation": "talk",
+      "box": "garDialogueBox",
+      "boxAnimation": "idle",
+
+      "text": ["Alright. Let's do it."]
+    }
+  ]
+}

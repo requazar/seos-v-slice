@@ -5,7 +5,7 @@
   "charter": "Atsuover + Rageminer",
   "playData": {
     "album": "ostHazyRiver",
-    "songVariations": ["pico", "og"],
+    "songVariations": ["pico", "og", "minus"],
     "difficulties": [
       "easy",
       "normal",
@@ -18,7 +18,7 @@
       "instrumental": "",
       "altInstrumentals": ["og"]
     },
-    "stage": "garcelloStage",
+    "stage": "strangeAlley",
     "noteStyle": "funkin",
     "ratings": {"easy": 0, "normal": 1, "hard": 2}
   },

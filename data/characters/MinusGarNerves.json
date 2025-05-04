@@ -1,0 +1,65 @@
+{
+    "version": "1.0.0",
+    "name": "Garcello (Minus - Nerves)",
+    "assetPath": "characters/MinusGarNerves",
+    "singTime": 6.1,
+    "isPixel": false,
+    "scale": 0.9,
+    "healthIcon": {
+        "id": "Gartired",
+        "isPixel": false,
+        "flipX": false,
+        "scale": 1
+    },
+    "animations": [
+        {
+            "name": "singLEFT",
+            "prefix": "MinusGarNerves Left",
+            "offsets": [
+                512,
+                213
+            ]
+        },
+        {
+            "name": "singRIGHT",
+            "prefix": "MinusGarNerves Right",
+            "offsets": [
+                -79,
+                294
+            ]
+        },
+        {
+            "name": "singUP",
+            "prefix": "MinusGarNerves Up",
+            "offsets": [
+                278,
+                400
+            ]
+        },
+        {
+            "name": "singDOWN",
+            "prefix": "MinusGarNerves Down",
+            "offsets": [
+                172,
+                141
+            ]
+        },
+        {
+            "name": "singDOWN-alt",
+            "prefix": "MinusGarNerves Cough",
+            "offsets": [
+                0,
+                0
+            ]
+        },
+        {
+            "name": "idle",
+            "prefix": "MinusGarNerves Idle",
+            "offsets": [
+                31,
+                56
+            ]
+        }
+    ],
+    "flipX": false
+}

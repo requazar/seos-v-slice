@@ -1,0 +1,79 @@
+import funkin.modding.module.Module;
+import Std;
+import funkin.ui.options.OptionsState;
+import flixel.util.FlxSave;
+import flixel.FlxG;
+import funkin.play.PlayState;
+import Type;
+import funkin.util.ReflectUtil;
+import funkin.util.Constants;
+import funkin.play.character.CharacterDataParser;
+import funkin.play.character.BaseCharacter;
+import funkin.ui.PixelatedIcon;
+import funkin.ui.freeplay.SongMenuItem;
+import funkin.ui.freeplay.FreeplayState;
+
+// This script is a W.I.P, I am working on it.
+// What this script does (should do) is eliminate the need to download AppleHair's freeplay icons separately, and instead allow them to be enabled in the options menu.
+
+class SEOSOptions extends Module
+{
+    public var save = null;
+    public var char:BaseCharacter;
+    public var enabled:Bool = true;
+
+    function bindSave(){
+        save = new FlxSave();
+        save.bind("applehairfreeplayicons", "Greeny3483");
+    }
+
+    function closeSave(){
+        if(save != null)save.close();
+        save = null;
+    }
+
+    function new(){
+        super("AppleHair Freeplay Icons", 1);
+        bindSave();
+
+        if(save.data.enabled == null)
+            save.data.enabled = true;
+
+        enabled = save.data.enabled;
+
+        closeSave();
+    }
+
+    public var inOptions:Bool = false;
+
+    override function onStateChangeEnd(event){
+        super.onStateChangeEnd(event);
+        inOptions = false;
+        if(Std.isOfType(event.targetState, OptionsState)){
+            trace();
+            //trace(Type.getInstanceFieldsOf(event.targetState));
+            var prefs = event.targetState.optionsCodex.pages.get("preferences");
+            inOptions = true;
+
+            bindSave();
+
+            prefs.createPrefItemCheckbox("AppleHair Freeplay Icons", "When enabled, replaces kirbiro's freeplay icons with AppleHair's", function(value) {
+                save.data.enabled = value;
+                enabled = value;
+            }, save.data.enabled);
+
+        }else if(inOptions)
+            closeSave();
+    }
+    
+    override function onUpdate():Void {
+        switch (char) {
+            case "garcello":
+                if (enabled) {
+                    PixelatedIcon.instance.setCharacter() = "applehairgarcellopixel";
+                } else {
+                    PixelatedIcon.instance.setCharacter() = "garcellopixel";
+                }
+        }
+    }
+}

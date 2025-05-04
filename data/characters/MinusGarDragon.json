@@ -1,0 +1,65 @@
+{
+    "version": "1.0.0",
+    "name": "Garcello (Minus - Dragon)",
+    "assetPath": "characters/MinusGarDragon",
+    "singTime": 6.1,
+    "isPixel": false,
+    "scale": 0.9,
+    "healthIcon": {
+        "id": "Gardead",
+        "isPixel": false,
+        "flipX": false,
+        "scale": 1
+    },
+    "animations": [
+        {
+            "name": "singLEFT",
+            "prefix": "MinusGarDragon Left",
+            "offsets": [
+                720,
+                241
+            ]
+        },
+        {
+            "name": "singRIGHT",
+            "prefix": "MinusGarDragon Right",
+            "offsets": [
+                155,
+                340
+            ]
+        },
+        {
+            "name": "singUP",
+            "prefix": "MinusGarDragon Up",
+            "offsets": [
+                285,
+                798
+            ]
+        },
+        {
+            "name": "singDOWN",
+            "prefix": "MinusGarDragon Down",
+            "offsets": [
+                398,
+                408
+            ]
+        },
+        {
+            "name": "tightbars",
+            "prefix": "MinusGarDragon coolguy",
+            "offsets": [
+                427,
+                660
+            ]
+        },
+        {
+            "name": "idle",
+            "prefix": "MinusGarDragon Idle",
+            "offsets": [
+                421,
+                256
+            ]
+        }
+    ],
+    "flipX": false
+}

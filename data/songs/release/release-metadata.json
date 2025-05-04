@@ -3,10 +3,9 @@
   "songName": "Release",
   "artist": "Atsuover + Rageminer",
   "charter": "Atsuover + Rageminer",
-  "divisions": 96,
   "playData": {
     "album": "ostHazyRiver",
-    "songVariations": ["og"],
+    "songVariations": ["og", "pico", "minus"],
     "difficulties": [
       "easy",
       "normal",
@@ -17,9 +16,9 @@
       "girlfriend": "gf",
       "opponent": "garcellodead",
       "instrumental": "",
-      "altInstrumentals": ["og"]
+      "altInstrumentals": ["og", "pico"]
     },
-    "stage": "garcelloStageAlt",
+    "stage": "strangeAlleySmokey",
     "noteStyle": "funkin",
     "ratings": {"easy": 1, "normal": 2, "hard": 3}
   },

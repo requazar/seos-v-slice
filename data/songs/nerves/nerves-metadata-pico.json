@@ -3,9 +3,9 @@
 	"artist": "PlantGamer09",
 	"charter": "Greeny3483",
 	"playData": {
-		"stage": "garcelloStagePico",
+		"stage": "strangeAlleyErectRain",
 		"noteStyle": "funkin",
-		"album": "seosVSliceOriginalOST",
+		"album": "seosErectOST",
 		"ratings": {
 			"easy": 1,
 			"normal": 3,
@@ -27,7 +27,7 @@
 	},
 	"songName": "Nerves (Pico Mix)",
 	"timeChanges": [
-		{"t": 8000, "bpm": 150}
+		{"t": 0, "bpm": 110}
 	],
 	"generatedBy": "Psych Engine v1.0-prerelease - Chart Editor V-Slice Exporter",
 	"version": "2.2.3"

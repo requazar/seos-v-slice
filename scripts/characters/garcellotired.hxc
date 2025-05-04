@@ -1,6 +1,8 @@
 import funkin.play.character.SparrowCharacter;
 import funkin.play.character.CharacterType;
+import funkin.play.character.BaseCharacter;
 import funkin.play.PlayState;
+import funkin.util.Constants;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.ui.FlxBar;
@@ -8,18 +10,18 @@ import flixel.ui.FlxBar;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.transition.Transition;
 
-class TiredGarcelloCharacter extends SparrowCharacter {
+class GarcelloTiredCharacter extends SparrowCharacter {
+
+	var COLOR_HEALTH_BAR_PURPLE:FlxColor = 0xFF8E40A5;
+
 	function new() {
 		super('garcellotired');
 	}
 
-	override function onCreate():Void {
-		super.onCreate(); // Ensure the parent class's onCreate is called
-		if (PlayState.instance != null && PlayState.instance.iconP2 != null) {
-			if (PlayState.instance.iconP2.characterId == 'garcellotired') {
-				// Use a hardcoded hexadecimal value for purple
-				PlayState.instance.healthBarBG.color = 0xFF800080; // ARGB format for purple
-			}
+	function onCreate(event:ScriptEvent) {
+		super.onCreate(event);
+		if (PlayState.instance != null) {
+			PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN);
 		}
 	}
 }

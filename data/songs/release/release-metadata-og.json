@@ -3,7 +3,6 @@
   "songName": "Release (OG)",
   "artist": "Atsuover + Rageminer",
   "charter": "Atsuover + Rageminer",
-  "divisions": 96,
   "playData": {
     "album": "seosOST",
     "difficulties": ["og"],
@@ -13,7 +12,7 @@
       "opponent": "garcellodead",
       "instrumental": "og"
     },
-    "stage": "garcelloStageAlt",
+    "stage": "strangeAlleySmokey",
     "noteStyle": "funkin",
     "ratings": {"og": 3}
   },

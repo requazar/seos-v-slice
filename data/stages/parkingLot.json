@@ -1,0 +1,118 @@
+{
+    "props": [
+        {
+            "danceEvery": 0,
+            "zIndex": -4,
+            "position": [
+                -1600.0,
+                -1220.0
+            ],
+            "scale": [
+                0.7,
+                0.7
+            ],
+            "name": "garMinusStageBG",
+            "isPixel": false,
+            "assetPath": "stages/garMinusStageBG",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": -3,
+            "position": [
+                -1700.0,
+                -1420.0
+            ],
+            "scale": [
+                0.8,
+                0.8
+            ],
+            "name": "garMinusStage",
+            "isPixel": false,
+            "assetPath": "stages/garMinusStage",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": 301,
+            "position": [
+                -1.0,
+                -320.0
+            ],
+            "scale": [
+                1,
+                1
+            ],
+            "name": "MinusCar",
+            "isPixel": false,
+            "assetPath": "stages/MinusCar",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": 301,
+            "position": [
+                -1999.0,
+                -20.0
+            ],
+            "scale": [
+                1,
+                1
+            ],
+            "name": "MinusCarTwo",
+            "isPixel": false,
+            "assetPath": "stages/MinusCarTwo",
+            "scroll": [
+                0.9,
+                0.9
+            ]
+        }
+    ],
+    "cameraZoom": 0.6,
+    "version": "1.0.0",
+    "characters": {
+        "bf": {
+            "zIndex": 300,
+            "position": [
+                -190,
+                100
+            ],
+            "cameraOffsets": [
+                -100,
+                -100
+            ]
+        },
+        "dad": {
+            "zIndex": 200,
+            "position": [
+                -845,
+                160
+            ],
+            "cameraOffsets": [
+                150,
+                -100
+            ]
+        },
+        "gf": {
+            "zIndex": 100,
+            "cameraOffsets": [
+                0,
+                50
+            ],
+            "position": [
+                -400,
+                0
+            ]
+        }
+    },
+    "name": "Parking Lot"
+}

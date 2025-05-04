@@ -28,12 +28,14 @@ class SmokeEmOutStruggleLevel extends Level
     }
   }
 	public function listDifficulties(variationId:String, variationIds:Array<String>, showLocked:Bool):Array<String> {
+		var difficulties:Array<String> = super.listDifficulties(variationId, variationIds, showLocked);
+
+		// Add "og" difficulty if the player has unlocked the week or showLocked is true
 		if (showLocked || Save.instance.hasBeatenLevel('weekg')) {
-			return super.listDifficulties(variationId, variationIds);
+			difficulties.push("og");
 		}
 
-		// Hide all difficulties if the player has not beaten the week.
-		return [];
+		return difficulties;
 	}
   
 }

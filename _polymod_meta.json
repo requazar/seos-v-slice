@@ -1,6 +1,6 @@
 {
   "title": "SMOKE 'EM OUT STRUGGLE [V-Slice Add-On]",
-  "description": "Port of Smoke 'Em Out Stuggle to the base game engine through softcode!",
+  "description": "Port of Smoke 'Em Out Struggle to the base game (V-Slice) engine through softcode!",
   "homepage": "https://gamebanana.com/mods/511838",
   "contributors": [
     {
@@ -14,8 +14,8 @@
       "url": "https://gamebanana.com/members/3161072"
     },
     {
-      "name": "Applehair",
-      "role": "Alternate Freeplay Icons",
+      "name": "AppleHair",
+      "role": "Freeplay icons for the port",
       "url": "https://gamebanana.com/members/1773453"
     },
     {
@@ -35,12 +35,12 @@
     },
     {
       "name": "Flezard",
-      "role": "FOUND CHARACTER SLIDING FIX",
+      "role": "Character offset fixes",
       "url": "https://gamebanana.com/members/1743213"
     },
     {
       "name": "Comedy Lost",
-      "role": "CODE FOR DIFFICULTY IMAGE",
+      "role": "OG Difficulty Help",
       "url": "https://gamebanana.com/members/2287198"
     },
     {
@@ -52,9 +52,24 @@
       "name": "Pink Lemonade",
       "role": "HEADACHE (PICO MIX)",
       "url": "https://gamebanana.com/members/1798934"
+    },
+    {
+      "name": "Requazar",
+      "role": "RELEASE (PICO MIX)",
+      "url": "https://www.youtube.com/watch?v=6jqQc5w6SZM"
+    },
+    {
+      "name": "MayoOddToSee",
+      "role": "Change Character Event",
+      "url": "https://github.com/mayo78/vslicescripts/tree/main/Change%20Character"
+    },
+    {
+      "name": "DaWaterMalone",
+      "role": "Lyrics Event",
+      "url": "https://gamebanana.com/posts/12192849"
     }
   ],
-  "api_version": "0.6.3",
-  "mod_version": "1.0.0",
+  "api_version": "0.6.4",
+  "mod_version": "3.0.0",
   "license": "Apache-2.0"
 }

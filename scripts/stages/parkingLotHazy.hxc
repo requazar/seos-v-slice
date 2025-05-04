@@ -1,0 +1,67 @@
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.math.FlxMath;
+import flixel.math.FlxPoint;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+import funkin.audio.FunkinSound;
+import funkin.Conductor;
+import funkin.util.Constants;
+import funkin.graphics.framebuffer.BitmapDataUtil;
+import funkin.graphics.framebuffer.FixedBitmapData;
+import funkin.graphics.shaders.OverlayBlend;
+import funkin.graphics.shaders.RuntimeRainShader;
+import funkin.modding.base.ScriptedFlxRuntimeShader;
+import funkin.graphics.shaders.AdjustColorShader;
+import funkin.Paths;
+import funkin.play.PlayState;
+import funkin.play.stage.Stage;
+import openfl.filters.BlurFilter;
+import openfl.filters.ShaderFilter;
+import funkin.util.FlxTweenUtil;
+import openfl.utils.Assets;
+import funkin.Preferences;
+import flixel.addons.display.FlxTiledSprite;
+import StringTools;
+
+class ParkingLotHazyStage extends Stage
+{
+
+   	public function new()
+	{
+		super('parkingLotHazy');
+	}
+
+    override function onCreate(event:ScriptEvent):Void
+	{
+		super.onCreate(event);
+
+		smokeyFront = PlayState.instance.currentStage.getNamedProp('smokeyFront');
+		smokeyBack = PlayState.instance.currentStage.getNamedProp('smokeyBack');
+
+		smokeyFront.visible = false;
+		smokeyBack.visible = false;
+    }
+
+	function buildStage():Void
+	{
+		super.buildStage();
+	}
+
+    function onStepHit(event:SongTimeScriptEvent)
+	{
+		super.onStepHit(event);
+
+		if (event.step == 17 && PlayState.instance.currentSong.id == "release" && PlayState.instance.currentVariation == "minus") {
+			FlxG.camera.flash(0xFFFFFFFF, 1.0);
+
+			smokeyFront.visible = true;
+			smokeyBack.visible = true;
+		}
+		if (event.step == 1133 && PlayState.instance.currentSong.id == "release" && PlayState.instance.currentVariation == "minus") {
+			PlayState.instance.currentStage.getDad().visible = false;
+		}
+	}
+}

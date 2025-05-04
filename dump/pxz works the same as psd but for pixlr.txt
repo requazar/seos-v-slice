@@ -1,0 +1,1 @@
+The "PXZ" files function the same as Photoshops' "PSD" file format. The difference being one is for Pixlr.com, and the other is for Photoshop.

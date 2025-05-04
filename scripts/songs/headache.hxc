@@ -26,26 +26,20 @@ class HeadacheSong extends Song {
 
   public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
-
-      var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-
       switch (variationId) {
         case 'pico':
-          // return hasBeatenPicoMix ? [''] : [];
-          // No Pico mix on BF instrumental, sorry!
-          return [];
+          return []; // No Pico mix on BF instrumental.
         default:
-          return hasBeatenPicoMix ? ['pico'] : [];
+          return ['og'];
       }
     }
-
     return [];
   }
 
   public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
-    if (PlayState.instance.currentVariation == 'default' && !PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true; // Match code to match the dialogue code from 0.6.2
+    if (PlayState.instance.currentVariation != 'pico' || PlayState.instance.currentVariation != 'minus' && !PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true; // Match code to match the dialogue code from 0.6.2
 
     if (!hasPlayedCutscene) {
       trace('Pausing countdown to play cutscene.');
@@ -138,7 +132,7 @@ class HeadacheSong extends Song {
   {
     super.onCreate(event);
 
-    PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN); // Purple color in hexadecimal
+    //PlayState.instance.healthBar.createFilledBar(COLOR_HEALTH_BAR_PURPLE, Constants.COLOR_HEALTH_BAR_GREEN); // Purple color in hexadecimal
 
     hasPlayedCutscene = false;
   }

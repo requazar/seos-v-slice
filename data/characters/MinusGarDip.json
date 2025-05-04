@@ -1,0 +1,34 @@
+{
+    "version": "1.0.0",
+    "name": "Garcello (Minus - Dip Out)",
+    "assetPath": "characters/MinusGarDip",
+    "singTime": 6.1,
+    "offsets": [-60, 400],
+    "isPixel": false,
+    "scale": 0.9,
+    "healthIcon": {
+        "id": "Gardead",
+        "isPixel": false,
+        "flipX": false,
+        "scale": 1
+    },
+    "animations": [
+        {
+            "name": "Dip",
+            "prefix": "MinusGarDip Dip",
+            "offsets": [
+                170,
+                1020
+            ]
+        },
+        {
+            "name": "idle",
+            "prefix": "MinusGarDip Idle",
+            "offsets": [
+                171,
+                1022
+            ]
+        }
+    ],
+    "flipX": false
+}
