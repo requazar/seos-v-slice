@@ -14,6 +14,8 @@ import flixel.tweens.FlxEase;
 import funkin.ui.options.PreferencesMenu;
 import funkin.play.cutscene.VideoCutscene; // 1133
 
+import Date;
+
 class ReleaseSong extends Song {
 
   var hasPlayedCutscene:Bool;
@@ -98,6 +100,10 @@ class ReleaseSong extends Song {
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
+
+    var timeStamp = Date.now().getTime();
+    PlayState.instance.discordRPCAlbum = "https://raw.githubusercontent.com/Greeny3483/seos-v-slice/refs/heads/main/images/freeplay/albumRoll/" + PlayState.instance.currentChart.album + ".png?raw=true?t=" + timeStamp;
+    PlayState.instance.discordRPCIcon = "https://raw.githubusercontent.com/Greeny3483/seos-v-slice/refs/heads/main/dump/icons/" + PlayState.instance.currentChart.characters.opponent + ".png?raw=true?t=" + timeStamp;
 
     hasPlayedCutscene = false;
     hasPlayedDialogue = false;
