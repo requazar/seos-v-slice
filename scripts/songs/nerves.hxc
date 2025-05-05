@@ -27,6 +27,12 @@ class NervesSong extends Song {
   public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
+    if (PlayState.instance.isChartingMode) {
+      // Skip cutscene logic in charting mode to prevent softlock.
+      hasPlayedCutscene = true;
+      return;
+    }
+
     if (PlayState.instance.currentVariation == 'minus') {
       hasPlayedCutscene = true;
     } else if ((PlayState.instance.currentVariation == 'default' || PlayState.instance.currentVariation == 'og') && !PlayStatePlaylist.isStoryMode) {

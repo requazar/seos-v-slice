@@ -32,6 +32,13 @@ class ReleaseSong extends Song {
   public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
+    if (PlayState.instance.isChartingMode) {
+      // Ensure the game doesn't softlock in charting mode. #3 - @requazar
+      hasPlayedCutscene = true;
+      hasPlayedDialogue = true;
+      return;
+    }
+
     if (!PlayStatePlaylist.isStoryMode && PlayState.instance.currentVariation != "pico") hasPlayedCutscene = true;
 
     if (!hasPlayedCutscene && PlayState.instance.currentVariation != 'pico') {

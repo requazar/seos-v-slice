@@ -27,6 +27,12 @@ class FadingSong extends Song {
   public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
+    if (PlayState.instance.isChartingMode) {
+      // Skip cutscene logic in charting mode to prevent softlock.
+      hasPlayedCutscene = true;
+      return;
+    }
+
     if (!PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true;
 
     if (!hasPlayedCutscene) {

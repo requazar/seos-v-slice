@@ -68,11 +68,6 @@ class StrangeAlleywayErectStormingStage extends Stage
 			case "release":
 				rainShaderStartIntensity = 0.3;
 				rainShaderEndIntensity = 0.5;
-				doCinematics();
-				destroyCinematics();
-				/*Calling and then immediately destroying the cinematics acts as a faux Preload.
-				*It reduces lag on the first time the event is called and actually used.
-				*/
 		}
         rainShader.intensity = rainShaderStartIntensity;
         rainShaderFilter = new ShaderFilter(rainShader);
