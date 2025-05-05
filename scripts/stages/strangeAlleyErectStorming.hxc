@@ -26,6 +26,10 @@ import funkin.Preferences;
 import flixel.addons.display.FlxTiledSprite;
 import StringTools;
 
+/* Strange Alleyway Storming Stage
+ * Contributors: Requazar
+*/
+
 class StrangeAlleywayErectStormingStage extends Stage
 {
 	var rainShader:RuntimeRainShader = new RuntimeRainShader();
@@ -213,12 +217,14 @@ class StrangeAlleywayErectStormingStage extends Stage
 			getGirlfriend().playAnimation('scared', true, true);
 		}
 	}
-	function forceLightningStrike():Void
+	function forceLightningStrike():Void 
+		/* The forced lightning strike renders over everything, and plays a specific sound
+		    * Rather than a random one. */
 	{
 
-		FunkinSound.playOnce(Paths.sound("thunder_1")); // The loudest one
+		FunkinSound.playOnce(Paths.sound("thunder_1"));
 	
-		game.camCutscene.flash(0xFFFFFFFF, 0.7); // Flash camCutscene instead
+		game.camCutscene.flash(0xFFFFFFFF, 0.7);
 	
 		if (getBoyfriend() != null && getBoyfriend().hasAnimation('scared')) {
 			getBoyfriend().playAnimation('scared', true, true);
@@ -245,39 +251,20 @@ class StrangeAlleywayErectStormingStage extends Stage
 			doLightningStrike(true, event.beat);
 		}
 	}
+
     function onStepHit(event:SongTimeScriptEvent)
 	{
 		super.onStepHit(event);
 
-		if (event.step == 1 && PlayState.instance.currentSong.id == "release") {
-	        forceLightningStrike();
-			doCinematics();
-
-			topBorder.visible = true;
-			bottomBorder.visible = true;
-
-			FlxTween.tween(topBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
-			FlxTween.tween(bottomBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
-		}
-
 		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
 	        forceLightningStrike();
 			destroyCinematics();
-			//Doesn't make sense to call it twice, so I assumed this was meant to destroy the cinematic bars.
-			topBorder.visible = true;
-			bottomBorder.visible = true;
-
-			FlxTween.tween(topBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
-			FlxTween.tween(bottomBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
-		}
-
-		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
-	        forceLightningStrike();
-			doCinematics();
 
 			topBorder.visible = true;
 			bottomBorder.visible = true;
+
 		}
+
 		if (event.step == 910 && PlayState.instance.currentSong.id == "release") {
 	        forceLightningStrike();
 			destroyCinematics();
