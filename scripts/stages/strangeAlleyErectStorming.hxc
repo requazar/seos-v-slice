@@ -162,11 +162,9 @@ class StrangeAlleywayErectStormingStage extends Stage
 	}
 
 	function doCinematics():Void {
+
 		topBorder.visible = true;
 		bottomBorder.visible = true;
-
-		FlxTween.tween(topBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
-		FlxTween.tween(bottomBorder, { alpha: 1 }, 1, { startDelay: 0, ease: FlxEase.quadOut });
 		
 		if (Preferences.downscroll) {
 			game.opponentStrumline.y = opponentStrumlineDefaultYPos + 400;
