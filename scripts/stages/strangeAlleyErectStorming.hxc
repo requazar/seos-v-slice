@@ -139,6 +139,9 @@ class StrangeAlleywayErectStormingStage extends Stage
 		lightningStrikeOffset = 8;
 
 		FlxG.camera.filters = [rainShaderFilter];
+		 if (topBorder.visible == true && bottomBorder.visible == true){
+            destroyCinematics();
+        }
 	}
 
 	function fetchAssetPaths():Array<String>
@@ -259,8 +262,8 @@ class StrangeAlleywayErectStormingStage extends Stage
 
 		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
 	        forceLightningStrike();
-			doCinematics();
-
+			destroyCinematics();
+			//Doesn't make sense to call it twice, so I assumed this was meant to destroy the cinematic bars.
 			topBorder.visible = true;
 			bottomBorder.visible = true;
 
