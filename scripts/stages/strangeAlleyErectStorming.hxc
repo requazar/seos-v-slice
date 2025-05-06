@@ -137,17 +137,6 @@ class StrangeAlleywayErectStormingStage extends Stage
 	
 	}
 
-	override function onSongRetry(event:ScriptEvent):Void {
-		super.onSongRetry(event);
-		lightningStrikeBeat = 0;
-		lightningStrikeOffset = 8;
-
-		FlxG.camera.filters = [rainShaderFilter];
-		 if (topBorder.visible == true && bottomBorder.visible == true){
-            destroyCinematics();
-        }
-	}
-
 	function fetchAssetPaths():Array<String>
 	{
 		var results:Array<String> = super.fetchAssetPaths();
@@ -256,7 +245,7 @@ class StrangeAlleywayErectStormingStage extends Stage
 
 		if (event.step == 767 && PlayState.instance.currentSong.id == "release") {
 	        forceLightningStrike();
-			destroyCinematics();
+			doCinematics();
 
 			topBorder.visible = true;
 			bottomBorder.visible = true;
@@ -270,5 +259,14 @@ class StrangeAlleywayErectStormingStage extends Stage
 			topBorder.visible = false;
 			bottomBorder.visible = false;
 		}
+	}
+	override function onSongRetry(event:ScriptEvent):Void {
+		super.onSongRetry(event);
+		lightningStrikeBeat = 0;
+		lightningStrikeOffset = 8;
+
+		FlxG.camera.filters = [rainShaderFilter];
+		
+		destroyCinematics();
 	}
 }
