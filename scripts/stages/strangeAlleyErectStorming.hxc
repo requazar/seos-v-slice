@@ -47,6 +47,7 @@ class StrangeAlleywayErectStormingStage extends Stage
 	var colorShaderBf:AdjustColorShader;
 	var colorShaderDad:AdjustColorShader;
 	var colorShaderGf:AdjustColorShader;
+	var inCinematics:Bool;
 
 	public var playerStrumlineDefaultYPos:Float = Preferences.downscroll ? FlxG.height - playerStrumline.height - Constants.STRUMLINE_Y_OFFSET : Constants.STRUMLINE_Y_OFFSET;
 	public var opponentStrumlineDefaultYPos:Float = Preferences.downscroll ? FlxG.height - opponentStrumline.height - Constants.STRUMLINE_Y_OFFSET : Constants.STRUMLINE_Y_OFFSET;
@@ -165,6 +166,7 @@ class StrangeAlleywayErectStormingStage extends Stage
 		game.healthBarBG.visible = false;
 	    game.iconP1.visible = false;
 		game.iconP2.visible = false;
+		inCinematics = true;
 	}
 	function destroyCinematics():Void { // Only place after doCinematics() has already been called
 		topBorder.visible = false;
@@ -182,6 +184,7 @@ class StrangeAlleywayErectStormingStage extends Stage
 		game.healthBarBG.visible = true;
 		game.iconP1.visible = true;
 		game.iconP2.visible = true;
+		inCinematics = false;
 	}
 
 	function doLightningStrike(playSound:Bool, beat:Int):Void
@@ -267,6 +270,9 @@ class StrangeAlleywayErectStormingStage extends Stage
 
 		FlxG.camera.filters = [rainShaderFilter];
 		
-		destroyCinematics();
+		if(inCinematics) {
+			destroyCinematics();
+			inCinematics = false;
+		}
 	}
 }
